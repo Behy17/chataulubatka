@@ -1,0 +1,62 @@
+{
+  "propertyId": 22812,
+  "propertyTitle": "Chata u Lubátka",
+  "source": "e-chalupy.cz",
+  "sourceUrl": "https://www.e-chalupy.cz/ubytovani-dolni-moravice-nova-ves-chata-u-lubatka-k-pronajmu-o22812",
+  "updatedAt": "2026-07-16T12:36:58Z",
+  "note": "endDate je den odjezdu; obsazené jsou dny startDate..endDate včetně (shodně s kalendářem na e-chalupy.cz).",
+  "reservations": [
+    {
+      "startDate": "2026-06-19",
+      "endDate": "2026-06-21"
+    },
+    {
+      "startDate": "2026-06-26",
+      "endDate": "2026-06-28"
+    },
+    {
+      "startDate": "2026-07-03",
+      "endDate": "2026-07-06"
+    },
+    {
+      "startDate": "2026-07-10",
+      "endDate": "2026-07-14"
+    },
+    {
+      "startDate": "2026-07-19",
+      "endDate": "2026-07-22"
+    },
+    {
+      "startDate": "2026-07-24",
+      "endDate": "2026-07-26"
+    },
+    {
+      "startDate": "2026-07-30",
+      "endDate": "2026-08-02"
+    },
+    {
+      "startDate": "2026-08-21",
+      "endDate": "2026-08-23"
+    },
+    {
+      "startDate": "2026-09-25",
+      "endDate": "2026-09-28"
+    },
+    {
+      "startDate": "2026-10-09",
+      "endDate": "2026-10-11"
+    },
+    {
+      "startDate": "2026-12-30",
+      "endDate": "2027-01-03"
+    },
+    {
+      "startDate": "2027-04-30",
+      "endDate": "2027-05-02"
+    },
+    {
+      "startDate": "2027-07-02",
+      "endDate": "2027-07-05"
+    }
+  ]
+}

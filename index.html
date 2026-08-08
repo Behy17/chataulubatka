@@ -1,0 +1,1268 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chata u Lubátka — roubenka pro 16 osob v Jeseníkách</title>
+  <meta name="description" content="Roubenka k pronájmu v Dolní Moravici v Jeseníkách. Celý objekt jen pro vás — 16 lůžek, 4 ložnice, 3 koupelny. Wi-Fi i dřevo v ceně, psi vítáni. Od 4 000 Kč/noc." />
+
+  <!-- Open Graph — sdílení na sociálních sítích (Messenger, WhatsApp, Discord…) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://chataulubatka.cz/" />
+  <meta property="og:title" content="Chata u Lubátka — roubenka pro 16 osob v Jeseníkách" />
+  <meta property="og:description" content="Roubenka pro rodiny a přátele. 16 lůžek, 4 ložnice, Wi-Fi, dřevo v ceně, psi vítáni. Klid a příroda Jeseníků." />
+  <meta property="og:image" content="https://chataulubatka.cz/assets/hero-1280.jpg" />
+  <meta property="og:image:width" content="1280" />
+  <meta property="og:image:height" content="720" />
+
+  <!-- Twitter Card — pro X/Twitter, pokud jej bude někdo sdílet -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:title" content="Chata u Lubátka — roubenka pro 16 osob v Jeseníkách" />
+  <meta property="twitter:description" content="Roubenka pro rodiny a přátele. 16 lůžek, Wi-Fi, dřevo v ceně, psi vítáni." />
+  <meta property="twitter:image" content="https://chataulubatka.cz/assets/hero-1280.jpg" />
+
+  <link rel="canonical" href="https://chataulubatka.cz/" />
+
+  <!-- Odpovídá skutečné barvě hlavičky (.site-header, rgba(28,20,13,.86)),
+       aby lišta prohlížeče na mobilu navazovala bez švu. -->
+  <meta name="theme-color" content="#1C140D" />
+
+  <!-- Strukturovaná data — díky nim Google pozná, že jde o ubytování, a může
+       u výsledku ukázat polohu, kapacitu a cenu. Uvedena jsou POUZE ověřená
+       fakta z webu; hodnocení ani recenze zde záměrně nejsou, protože žádné
+       zatím neexistují. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LodgingBusiness",
+    "name": "Chata u Lubátka",
+    "description": "Roubenka v srdci Jeseníků pro rodiny a přátele. Celý objekt vždy jen pro jednu skupinu.",
+    "url": "https://chataulubatka.cz/",
+    "image": "https://chataulubatka.cz/assets/hero-1280.jpg",
+    "telephone": "+420776145444",
+    "email": "lucie_dostalova@seznam.cz",
+    "identifier": "73886271",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Nová Ves 46",
+      "addressLocality": "Dolní Moravice",
+      "postalCode": "79501",
+      "addressCountry": "CZ"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 49.9889152778,
+      "longitude": 17.2784747222
+    },
+    "petsAllowed": true,
+    "numberOfRooms": 4,
+    "maximumAttendeeCapacity": 16,
+    "amenityFeature": [
+      { "@type": "LocationFeatureSpecification", "name": "Wi-Fi", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Krbové dřevo v ceně", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Parkování u objektu", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Plně vybavená kuchyně", "value": true }
+    ],
+    "priceRange": "4000–12000 CZK"
+  }
+  </script>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏠</text></svg>" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- Inter (Cereal fallback) pro běžný text; EB Garamond (patkový) pro nadpisy —
+       boutique/„drahý" dojem podle vzoru. -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600;700&display=swap" />
+
+  <!-- Bez <link rel="preload"> záměrně: media dotaz na preloadu neodfiltroval
+       desktopovou variantu a mobil stahoval obrázek dvakrát. <picture> je hned
+       na začátku <body> s fetchpriority="high", preload scanner ho najde sám. -->
+  <link rel="stylesheet" href="assets/css/style.css?v=37" />
+  <!-- defer: bez něj oba soubory blokovaly první vykreslení. Odložené skripty
+       se spouštějí v pořadí dokumentu, takže GSAP je připravený dřív než
+       skripty webu na konci <body>. Animace jsou ozdoba, ne obsah. -->
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body>
+
+  <!-- Uživatel klávesnice by jinak musel na každé návštěvě protabovat celou
+       navigaci. Odkaz je vidět, až když na něj přijde fokus. -->
+  <a class="skip-link" href="#hlavni-obsah">Přeskočit na obsah</a>
+
+  <header class="site-header" id="header">
+    <nav class="nav" aria-label="Hlavní navigace">
+
+      <ul class="nav__links">
+        <li><a href="#chata">Chata</a></li>
+        <li><a href="#nabidky">Nabídky</a></li>
+        <li><a href="#cenik">Ceník</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+      </ul>
+
+      <a class="nav__logo" href="#hero" aria-label="Chata u Lubátka — zpět nahoru">
+        <img src="assets/logo-192.png" alt="Chata u Lubátka" width="192" height="192" />
+      </a>
+
+      <div class="nav__actions">
+        <a class="nav__phone" href="tel:+420776145444">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="7" y="2" width="10" height="20" rx="2.5" />
+            <line x1="11" y1="18" x2="13" y2="18" />
+          </svg>
+          <span>+420 776 145 444</span>
+        </a>
+
+        <a class="btn btn--primary" href="#rezervace">
+          <span>Rezervovat</span>
+        </a>
+
+        <button class="nav__burger" id="burger" type="button" aria-label="Otevřít menu" aria-expanded="false" aria-controls="mobile-menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+
+    </nav>
+  </header>
+
+  <div class="mobile-menu" id="mobile-menu" hidden>
+    <ul>
+      <li><a href="#chata">Chata</a></li>
+      <li><a href="#nabidky">Nabídky</a></li>
+      <li><a href="#cenik">Ceník</a></li>
+      <li><a href="#kontakt">Kontakt</a></li>
+    </ul>
+    <a class="btn btn--primary btn--lg" href="#rezervace">Rezervovat</a>
+    <a class="mobile-menu__phone" href="tel:+420776145444">+420 776 145 444</a>
+  </div>
+
+  <main id="hlavni-obsah">
+    <section class="hero" id="hero">
+
+      <div class="hero__media" id="heroMedia">
+        <picture>
+          <!-- Fotka oříznutá speciálně pro mobil (poměr ~1.18:1) — na
+               úzkém displeji z ní object-fit: cover odřízne mnohem méně
+               než ze širokoúhlé galerijní fotky, takže dům nepůsobí
+               přezoomovaně a je vidět celý včetně střechy. -->
+          <source
+            srcset="assets/hero-m-550.jpg 550w, assets/hero-m-800.jpg 800w, assets/hero-m-1100.jpg 1100w"
+            sizes="100vw" />
+          <img
+            class="hero__img hero__img--mobile"
+            src="assets/hero-m-800.jpg"
+            alt="Chata u Lubátka - dřevěná roubenka s modrou střechou v zelené přírodě Jeseníků"
+            width="800"
+            height="681"
+            fetchpriority="high" />
+        </picture>
+
+        <video
+          class="hero__img hero__img--desktop"
+          id="heroVideo"
+          muted
+          loop
+          playsinline
+          preload="none"
+          poster="assets/hero-1280.jpg"
+          data-src="assets/hero.mp4"
+          width="1920"
+          height="1080">
+          <!-- Zdroj videa se vloží až po načtení zbytku stránky (viz hero.js),
+               aby 14MB soubor nesoupeřil s prvním načtením. Poster se ukáže hned. -->
+          <!-- Fallback pro starší prohlížeče -->
+          <img
+            src="assets/hero-1280.jpg"
+            alt="Chata u Lubátka - dřevěná roubenka s modrá střechou v zelené přírodě Jeseníků"
+            width="1920"
+            height="1080" />
+        </video>
+      </div>
+
+      <div class="hero__scrim" aria-hidden="true"></div>
+      <div class="hero__vignette" aria-hidden="true"></div>
+
+      <div class="hero__content" id="heroContent">
+        <p class="hero__eyebrow reveal" data-delay="1">Jeseníky · Roubenka · Celoroční pobyty</p>
+
+        <h1 class="hero__title reveal" data-delay="2">Chata u Lubátka</h1>
+
+        <div class="hero__ornament reveal" data-delay="3" aria-hidden="true">
+          <svg viewBox="0 0 240 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round">
+            <path class="orn-line" d="M4 12H92" />
+            <path class="orn-line" d="M148 12h88" />
+            <path d="M104 12c4-6 9-8 16-8-2 5-6 8-16 8Z" />
+            <path d="M136 12c-4 6-9 8-16 8 2-5 6-8 16-8Z" />
+            <circle cx="120" cy="12" r="3.2" />
+            <path d="M120 4.5v-2M120 21.5v-2" />
+          </svg>
+        </div>
+
+        <p class="hero__subtitle reveal" data-delay="4">Ubytování v srdci Jeseníků</p>
+
+        <div class="hero__cta reveal" data-delay="5">
+          <a class="btn btn--primary btn--lg" href="#rezervace">Zjistit volné termíny</a>
+          <a class="btn btn--ghost btn--lg" href="#chata">Prohlédnout chatu</a>
+        </div>
+      </div>
+
+
+    </section>
+
+    <section class="story" id="pribeh">
+      <div class="story__container">
+
+        <header class="story__head">
+          <h2 class="story__title">
+            <span class="story__title-line"><span class="story__title-inner">Vytvořeno z lásky</span></span>
+            <span class="story__title-line story__title-line--accent"><span class="story__title-inner">k přírodě Jeseníků</span></span>
+          </h2>
+          <p class="story__text">
+            Chtěli jsme vytvořit místo, kde se čas skutečně zpomaluje. Kde ráno voní dřevo
+            a kocháte se výhledem do údolí, odpoledne patří nádherným stezkám Jeseníků a
+            večer se všichni scházíte kolem ohně. Tak se zrodila Chata u&nbsp;Lubátka —
+            roubenka, kde je každý detail stavěn na autentičnost a klid. Místo, kde se
+            skutečně počítá jen jedno: kvalitní čas s těmi, na kterých vám záleží.
+          </p>
+        </header>
+
+        <div class="story__gallery">
+          <figure class="story__figure story__figure--tall">
+            <div class="story__frame">
+              <img src="assets/story-roubenka.jpg" alt="Chata u Lubátka - dřevěná roubenka s kamenným základem a modrou střechou" width="600" height="900" />
+            </div>
+          </figure>
+
+          <figure class="story__figure">
+            <div class="story__frame">
+              <img src="assets/story-interior-640.jpg" alt="Luxusní interiér roubenky s dřevěnými trámy a moderním nábytkem" width="640" height="288" />
+            </div>
+          </figure>
+
+          <figure class="story__figure">
+            <div class="story__frame">
+              <img src="assets/story-okoli-640.jpg" alt="Lesní krajina v horské přírodě" width="640" height="400" />
+            </div>
+          </figure>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="reasons" id="duvody">
+      <div class="reasons__bg" aria-hidden="true"></div>
+      <div class="reasons__overlay" aria-hidden="true"></div>
+
+      <div class="reasons__container">
+        <header class="reasons__head">
+          <h2 class="reasons__title">
+            <span class="reasons__title-line"><span class="reasons__title-inner">5&nbsp;důvodů, proč si dopřát</span></span>
+            <span class="reasons__title-line reasons__title-line--accent"><span class="reasons__title-inner">Jeseníky v&nbsp;týdnu</span></span>
+          </h2>
+        </header>
+
+        <ol class="reasons__list">
+          <li class="reasons__item">
+            <span class="reasons__num" aria-hidden="true">01</span>
+            <div class="reasons__body">
+              <h3 class="reasons__item-title">Výhodnější cena, stejný zážitek</h3>
+              <p class="reasons__item-text">Roubenka, výhledy i pohodlí zůstávají beze změny. Mění se jen cena — v&nbsp;týdnu za pobyt zaplatíte znatelně méně než o&nbsp;víkendu.</p>
+            </div>
+          </li>
+
+          <li class="reasons__item">
+            <span class="reasons__num" aria-hidden="true">02</span>
+            <div class="reasons__body">
+              <h3 class="reasons__item-title">Hory jen pro vás</h3>
+              <p class="reasons__item-text">Prázdné hřebeny a lesní cesty bez davů. Ticho, čerstvý vzduch a výhledy, které v&nbsp;týdnu s&nbsp;nikým sdílet nebudete.</p>
+            </div>
+          </li>
+
+          <li class="reasons__item">
+            <span class="reasons__num" aria-hidden="true">03</span>
+            <div class="reasons__body">
+              <h3 class="reasons__item-title">Čas bez spěchu</h3>
+              <p class="reasons__item-text">Žádné fronty, žádné shony. Ráno začíná kávou v&nbsp;klidu, den plyne přesně tak rychle, jak si sami určíte.</p>
+            </div>
+          </li>
+
+          <li class="reasons__item">
+            <span class="reasons__num" aria-hidden="true">04</span>
+            <div class="reasons__body">
+              <h3 class="reasons__item-title">Vůně dřeva a praskající oheň</h3>
+              <p class="reasons__item-text">Dlouhé večery u&nbsp;ohně, voda na dosah a poctivé dřevo všude kolem. Na pár dní se roubenka stane vaším domovem v&nbsp;horách.</p>
+            </div>
+          </li>
+
+          <li class="reasons__item">
+            <span class="reasons__num" aria-hidden="true">05</span>
+            <div class="reasons__body">
+              <h3 class="reasons__item-title">Restart, který skutečně funguje</h3>
+              <p class="reasons__item-text">Digitální detox, procházky lesem a spánek jako dávno ne. Z&nbsp;Jeseníků odjedete odpočatí a jako vyměnění.</p>
+            </div>
+          </li>
+        </ol>
+
+        <div class="reasons__cta">
+          <a class="btn btn--primary btn--lg" href="#rezervace">Zjistit volné termíny v týdnu</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="stay" id="chata">
+      <div class="stay__container">
+
+        <header class="stay__head">
+          <h2 class="stay__title">Dost prostoru pro celou partu</h2>
+          <p class="stay__subtitle">
+            Chata stojí v klidné části Nové Vsi u Dolní Moravice, v srdci Jeseníků —
+            hned vedle protéká potůček, který dotváří pohodovou atmosféru pobytu.
+            Je ideální pro větší skupiny, rodiny s dětmi i partu přátel, kteří chtějí
+            trávit čas společně.
+          </p>
+        </header>
+
+        <ul class="stay__stats">
+          <li class="stay__stat">
+            <span class="stay__stat-num">16</span>
+            <span class="stay__stat-label">lůžek</span>
+          </li>
+          <li class="stay__stat">
+            <span class="stay__stat-num">4</span>
+            <span class="stay__stat-label">ložnice</span>
+          </li>
+          <li class="stay__stat">
+            <span class="stay__stat-num">3</span>
+            <span class="stay__stat-label">koupelny</span>
+          </li>
+          <li class="stay__stat">
+            <span class="stay__stat-num">7</span>
+            <span class="stay__stat-label">míst k parkování</span>
+          </li>
+        </ul>
+
+        <div class="stay__floors">
+          <article class="stay__floor">
+            <div class="stay__floor-media">
+              <img src="assets/gallery/chata-16.jpg" width="1000" height="450" loading="lazy"
+                   alt="Plně vybavená kuchyně propojená s jídelnou v roubence" />
+            </div>
+            <div class="stay__floor-body">
+              <p class="stay__floor-tag">Přízemí</p>
+              <h3 class="stay__floor-title">Srdce chaty</h3>
+              <p class="stay__floor-text">
+                Prostorná vstupní chodba a velkorysá obytná místnost, kde se propojuje
+                obývací část s krbem, jídelna a plně vybavená kuchyně. Právě tady se
+                všichni sejdete. K dispozici je i samostatné WC.
+              </p>
+            </div>
+          </article>
+
+          <article class="stay__floor stay__floor--reverse">
+            <div class="stay__floor-media">
+              <img src="assets/gallery/chata-13.jpg" width="1000" height="450" loading="lazy"
+                   alt="Podkrovní ložnice s manželskou postelí a připraveným povlečením" />
+            </div>
+            <div class="stay__floor-body">
+              <p class="stay__floor-tag">První patro</p>
+              <h3 class="stay__floor-title">Čtyři pokoje a dětská herna</h3>
+              <ul class="stay__rooms">
+                <li><strong>2× čtyřlůžkový pokoj</strong> — společná koupelna s vanou a WC na chodbě</li>
+                <li><strong>2× třílůžkový pokoj</strong> — vlastní koupelna se sprchovým koutem a WC</li>
+                <li><strong>Dětská herna</strong> — místo pro dvě další lůžka</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+
+        <ul class="stay__notes">
+          <li class="stay__note">
+            <h3 class="stay__note-title">Vlastní vaření</h3>
+            <p class="stay__note-text">
+              Plně vybavená kuchyně, ve které uvaříte i pro celou partu. Restaurace
+              a další možnosti občerstvení najdete v dojezdové vzdálenosti.
+            </p>
+          </li>
+
+          <li class="stay__note">
+            <h3 class="stay__note-title">Parkování u chaty</h3>
+            <p class="stay__note-text">
+              Přímo u chaty zaparkují až 4 auta, další zhruba 3 místa jsou u hlavní
+              cesty. V zimě může být příjezd ovlivněn sněhem — cesta je dle potřeby
+              udržována.
+            </p>
+          </li>
+
+          <li class="stay__note">
+            <h3 class="stay__note-title">Tři koupelny</h3>
+            <p class="stay__note-text">
+              Společná koupelna s vanou a WC na chodbě v patře, dvě koupelny se
+              sprchovým koutem a WC u třílůžkových pokojů a samostatné WC v přízemí.
+            </p>
+          </li>
+
+          <li class="stay__note">
+            <h3 class="stay__note-title">Psa vezměte s sebou</h3>
+            <p class="stay__note-text">
+              Pes je u nás vítaný a nic za něj nepřiplácíte. Kolem chaty jsou lesy
+              a louky, takže se má kde vyběhat.
+            </p>
+          </li>
+
+          <li class="stay__note">
+            <h3 class="stay__note-title">Wi-Fi v ceně</h3>
+            <p class="stay__note-text">
+              Připojení k internetu je na chatě k dispozici a máte ho v ceně pobytu.
+              Jestli ho vůbec zapnete, je čistě na vás.
+            </p>
+          </li>
+
+          <li class="stay__note">
+            <h3 class="stay__note-title">Dřevo u krbu</h3>
+            <p class="stay__note-text">
+              Krbové dřevo je v ceně pobytu — večer u ohně tak nemusíte nic dovážet
+              ani dokupovat.
+            </p>
+          </li>
+        </ul>
+
+      </div>
+    </section>
+
+    <section class="gallery" id="gallery">
+      <div class="gallery__container">
+
+        <div class="gallery__grid">
+          <button class="gallery__item gallery__item--featured" type="button">
+            <img src="assets/gallery/chata-1.jpg"
+                 alt="Roubenka z kulatiny s krytou terasou, kamennou podezdívkou a lanovým zábradlím" />
+          </button>
+          <button class="gallery__item" type="button">
+            <img src="assets/gallery/chata-9.jpg" loading="lazy"
+                 alt="Podkrovní koupelna se sprchovým koutem, kulatým zrcadlem a střešním oknem" />
+          </button>
+          <button class="gallery__item" type="button">
+            <img src="assets/gallery/chata-2.jpg" loading="lazy"
+                 alt="Roubenka pod sněhem za slunečného zimního dne, kolem zasněžené smrky" />
+          </button>
+          <button class="gallery__item" type="button">
+            <img src="assets/gallery/chata-6.jpg" loading="lazy"
+                 alt="Vstupní chodba s masivním schodištěm z kulatiny vedoucím do patra" />
+          </button>
+          <button class="gallery__item" type="button">
+            <img src="assets/gallery/chata-8.jpg" loading="lazy"
+                 alt="Jídelna s dlouhým stolem a lavicemi pod trámovým stropem" />
+          </button>
+          <button class="gallery__item" type="button">
+            <img src="assets/gallery/chata-3.jpg" loading="lazy"
+                 alt="Boční pohled na roubenku s posezením na terase a zelení kolem" />
+          </button>
+          <button class="gallery__item" type="button">
+            <img src="assets/gallery/chata-10.jpg" loading="lazy"
+                 alt="Koupelna s vanou a sprchovým koutem, prosvětlená střešním oknem" />
+          </button>
+          <button class="gallery__item" type="button">
+            <img src="assets/gallery/chata-18.jpg" loading="lazy"
+                 alt="Obývací část s rohovou sedačkou a večerním nasvícením v roubené místnosti" />
+          </button>
+          <button class="gallery__item" type="button">
+            <img src="assets/gallery/chata-23.jpg" loading="lazy"
+                 alt="Roubenka za slunečného dne se zeleným trávníkem a krytým posezením" />
+          </button>
+        </div>
+      </div>
+
+      <!-- Prohlížeč fotek — otevře se po kliknutí na fotku výše -->
+      <div class="lightbox" id="lightbox" role="dialog" aria-modal="true"
+           aria-label="Prohlížeč fotek" hidden>
+        <button class="lightbox__close" id="lightboxClose" type="button" aria-label="Zavřít prohlížeč">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+            <path d="M6 6l12 12M18 6L6 18" />
+          </svg>
+        </button>
+
+        <button class="lightbox__nav lightbox__nav--prev" id="lightboxPrev" type="button" aria-label="Předchozí fotka">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M15 5l-7 7 7 7" />
+          </svg>
+        </button>
+
+        <figure class="lightbox__figure">
+          <img class="lightbox__img" id="lightboxImg" alt="" />
+          <figcaption class="lightbox__caption">
+            <span id="lightboxCaption"></span>
+            <span class="lightbox__counter" id="lightboxCounter"></span>
+          </figcaption>
+        </figure>
+
+        <button class="lightbox__nav lightbox__nav--next" id="lightboxNext" type="button" aria-label="Další fotka">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+      </div>
+    </section>
+
+    <section class="around" id="okoli">
+      <div class="around__container">
+
+        <header class="around__head">
+          <h2 class="around__title">Jeseníky přímo za prahem</h2>
+          <p class="around__subtitle">
+            Okolí chaty nabízí ideální podmínky pro aktivní i odpočinkovou dovolenou —
+            ať už přijedete v zimě, nebo v létě.
+          </p>
+        </header>
+
+        <div class="around__cards">
+
+          <article class="around__card">
+            <img src="assets/gallery/chata-4.jpg" width="1000" height="750" loading="lazy"
+                 alt="Zasněžená cesta k roubence mezi smrky" />
+            <div class="around__card-scrim" aria-hidden="true"></div>
+            <div class="around__card-body">
+              <h3 class="around__card-title">V zimě</h3>
+              <p class="around__card-text">
+                Vhodné trasy pro běžkaře máte hned v blízkosti chaty. Do 30 minut
+                jízdy se nachází několik lyžařských areálů.
+              </p>
+            </div>
+          </article>
+
+          <article class="around__card">
+            <img src="assets/gallery/chata-25.jpg" width="900" height="1200" loading="lazy"
+                 alt="Slunná terasa roubenky s posezením a houpacím křeslem" />
+            <div class="around__card-scrim" aria-hidden="true"></div>
+            <div class="around__card-body">
+              <h3 class="around__card-title">V létě</h3>
+              <p class="around__card-text">
+                Klid, příroda a široké možnosti výletů. Přímo v okolí využijete
+                cyklotrasy i pěší turistiku.
+              </p>
+            </div>
+          </article>
+
+          <article class="around__card">
+            <img src="assets/okoli-les.jpg" width="1600" height="1067" loading="lazy"
+                 alt="Mlžný smrkový les na svazích Jeseníků" />
+            <div class="around__card-scrim" aria-hidden="true"></div>
+            <div class="around__card-body">
+              <h3 class="around__card-title">Oblíbené výlety</h3>
+              <p class="around__card-text">
+                Karlova Studánka, Praděd a další turistické trasy v Jeseníkách —
+                klasika, na kterou se hosté rádi vracejí.
+              </p>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="trips" id="vylety">
+      <div class="trips__glow" aria-hidden="true"></div>
+
+      <div class="trips__container">
+
+        <header class="trips__head">
+          <h2 class="trips__title">
+            <span class="trips__title-line"><span class="trips__title-inner">To nejlepší z Jeseníků</span></span>
+            <span class="trips__title-line trips__title-line--accent"><span class="trips__title-inner">máte na dosah</span></span>
+          </h2>
+          <p class="trips__subtitle">
+            Od nejvyššího vrcholu Moravy po tyrkysovou hladinu Slezské Harty —
+            výlety, na které se hosté rádi vracejí, začínají hned za prahem chaty.
+          </p>
+        </header>
+
+        <figure class="trips__video">
+          <button class="trips__player" type="button" data-yt="xwGK6S4csgc"
+                   aria-label="Přehrát video — Jeseníky z výšky">
+            <img class="trips__thumb"
+                 src="https://img.youtube.com/vi/xwGK6S4csgc/maxresdefault.jpg"
+                 alt="Záběr na Jeseníky z výšky — hřebeny a lesy kolem Chaty u Lubátka"
+                 loading="lazy" width="1280" height="720"
+                 onerror="this.onerror=null;this.src='https://img.youtube.com/vi/xwGK6S4csgc/hqdefault.jpg';" />
+            <span class="trips__video-scrim" aria-hidden="true"></span>
+            <span class="trips__play" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M8 5.14v13.72a1 1 0 0 0 1.54.84l10.29-6.86a1 1 0 0 0 0-1.68L9.54 4.3A1 1 0 0 0 8 5.14z" />
+              </svg>
+            </span>
+          </button>
+        </figure>
+
+
+      </div>
+    </section>
+
+    <section class="offers" id="nabidky">
+      <div class="offers__container">
+
+        <header class="offers__head">
+          <h2 class="offers__title">
+            <span class="offers__title-line"><span class="offers__title-inner">Balíčky pobytů</span></span>
+            <span class="offers__title-line offers__title-line--accent"><span class="offers__title-inner">pro každou příležitost</span></span>
+          </h2>
+          <p class="offers__subtitle">
+            Vyberte si příležitost — o zbytek se postará roubenka, vůně dřeva
+            a klid Jeseníků. Celý objekt vždy jen pro vás.
+          </p>
+        </header>
+
+        <ul class="offers__grid">
+
+          <li class="offers__card">
+            <a class="offers__link" href="#rezervace">
+              <span class="offers__media">
+                <img src="assets/gallery/chata-25.jpg" width="900" height="1200" loading="lazy"
+                     alt="Slunná terasa roubenky s houpacím křeslem" />
+                <span class="offers__scrim" aria-hidden="true"></span>
+                <span class="offers__tag">Sleva Ne–Čt</span>
+              </span>
+              <span class="offers__body">
+                <span class="offers__name">Týden v týdnu</span>
+                <span class="offers__text">
+                  Stejná roubenka, stejné pohodlí — jen výhodnější cena všedních dnů.
+                  V týdnu ušetříte 1&nbsp;000&nbsp;Kč za noc.
+                </span>
+                <span class="offers__price">
+                  <span class="offers__price-from">od</span>4&nbsp;000&nbsp;Kč<span class="offers__price-unit">/ noc</span>
+                </span>
+                <span class="offers__more">Nezávazně poptat</span>
+              </span>
+            </a>
+          </li>
+
+          <li class="offers__card">
+            <a class="offers__link" href="#rezervace">
+              <span class="offers__media">
+                <img src="assets/gallery/chata-2.jpg" width="1000" height="750" loading="lazy"
+                     alt="Roubenka pod sněhem za slunečného zimního dne" />
+                <span class="offers__scrim" aria-hidden="true"></span>
+                <span class="offers__tag">4 noci</span>
+              </span>
+              <span class="offers__body">
+                <span class="offers__name">Vánoce v roubence</span>
+                <span class="offers__text">
+                  Svátky u praskajícího krbu, sníh za okny a celá chata jen pro vaši
+                  rodinu. Vánoce, na které se bude vzpomínat.
+                </span>
+                <span class="offers__price">
+                  25&nbsp;000&nbsp;Kč<span class="offers__price-unit">/ 4 noci</span>
+                </span>
+                <span class="offers__more">Nezávazně poptat</span>
+              </span>
+            </a>
+          </li>
+
+          <li class="offers__card">
+            <a class="offers__link" href="#rezervace">
+              <span class="offers__media">
+                <img src="assets/gallery/chata-18.jpg" width="1000" height="750" loading="lazy"
+                     alt="Obývací část s večerním nasvícením v roubené místnosti" />
+                <span class="offers__scrim" aria-hidden="true"></span>
+                <span class="offers__tag">6 nocí</span>
+              </span>
+              <span class="offers__body">
+                <span class="offers__name">Silvestr na horách</span>
+                <span class="offers__text">
+                  Konec roku s partou, dlouhé večery a přípitek pod hvězdami Jeseníků.
+                  Nový rok začnete v naprostém klidu.
+                </span>
+                <span class="offers__price">
+                  40&nbsp;000&nbsp;Kč<span class="offers__price-unit">/ 6 nocí</span>
+                </span>
+                <span class="offers__more">Nezávazně poptat</span>
+              </span>
+            </a>
+          </li>
+
+          <li class="offers__card">
+            <a class="offers__link" href="#rezervace">
+              <span class="offers__media">
+                <img src="assets/gallery/chata-4.jpg" width="1000" height="750" loading="lazy"
+                     alt="Zasněžená cesta k roubence mezi smrky" />
+                <span class="offers__scrim" aria-hidden="true"></span>
+                <span class="offers__tag">6 nocí</span>
+              </span>
+              <span class="offers__body">
+                <span class="offers__name">Jarní prázdniny</span>
+                <span class="offers__text">
+                  Poslední sníh na horách, běžkařské stopy hned za humny a vytopená
+                  chata pro celou partu. Týden na lyžích i na pohodový odpočinek.
+                </span>
+                <span class="offers__price">
+                  30&nbsp;000&nbsp;Kč<span class="offers__price-unit">/ 6 nocí</span>
+                </span>
+                <span class="offers__more">Nezávazně poptat</span>
+              </span>
+            </a>
+          </li>
+
+          <li class="offers__card">
+            <a class="offers__link" href="#rezervace">
+              <span class="offers__media">
+                <img src="assets/gallery/chata-23.jpg" width="1000" height="750" loading="lazy"
+                     alt="Roubenka za slunečného dne se zeleným trávníkem a posezením" />
+                <span class="offers__scrim" aria-hidden="true"></span>
+                <span class="offers__tag">4 noci</span>
+              </span>
+              <span class="offers__body">
+                <span class="offers__name">Velikonoce v Jeseníkách</span>
+                <span class="offers__text">
+                  Probouzející se jaro, procházky lesem a klid daleko od shonu.
+                  Ideální začátek nové sezóny na horách.
+                </span>
+                <span class="offers__price">
+                  22&nbsp;000&nbsp;Kč<span class="offers__price-unit">/ 4 noci</span>
+                </span>
+                <span class="offers__more">Nezávazně poptat</span>
+              </span>
+            </a>
+          </li>
+
+        </ul>
+
+        <div class="offers__foot">
+          <a class="btn btn--outline btn--lg" href="#cenik">Zobrazit celý ceník</a>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="price" id="cenik">
+      <div class="price__glow" aria-hidden="true"></div>
+
+      <div class="price__container">
+
+        <header class="price__head">
+          <p class="price__eyebrow">Ceník</p>
+          <h2 class="price__title">Pronajato pouze pro vás</h2>
+          <p class="price__subtitle">
+            Objekt se pronajímá vždy jako celek. Po dobu vašeho pobytu ho máte jen
+            pro sebe — bez sdílení s dalšími hosty.
+          </p>
+          <p class="price__terms">
+            <span>Ceny za celý objekt do 10 osob</span>
+            <span class="price__terms-sep" aria-hidden="true">·</span>
+            <span>Minimální délka pobytu 2 noci</span>
+          </p>
+        </header>
+
+        <div class="price__seasons">
+          <article class="price__season">
+            <p class="price__season-tag">Červen – srpen</p>
+            <h3 class="price__season-name">Letní sezóna</h3>
+            <div class="price__rows">
+              <div class="price__row price__row--hero">
+                <span class="price__row-label">
+                  Noc v&nbsp;týdnu
+                  <span class="price__row-note">neděle – čtvrtek</span>
+                </span>
+                <span class="price__row-value">4&nbsp;500&nbsp;Kč</span>
+              </div>
+              <div class="price__row">
+                <span class="price__row-label">
+                  Víkend · 2 noci
+                  <span class="price__row-note">pátek – neděle</span>
+                </span>
+                <span class="price__row-value">
+                  11&nbsp;000&nbsp;Kč
+                  <span class="price__row-unit">5&nbsp;500&nbsp;Kč za noc</span>
+                </span>
+              </div>
+            </div>
+            <p class="price__save">V&nbsp;týdnu ušetříte 1&nbsp;000&nbsp;Kč za noc</p>
+          </article>
+
+          <article class="price__season">
+            <p class="price__season-tag">Prosinec – březen</p>
+            <h3 class="price__season-name">Zimní sezóna</h3>
+            <div class="price__rows">
+              <div class="price__row price__row--hero">
+                <span class="price__row-label">
+                  Noc v&nbsp;týdnu
+                  <span class="price__row-note">neděle – čtvrtek</span>
+                </span>
+                <span class="price__row-value">5&nbsp;000&nbsp;Kč</span>
+              </div>
+              <div class="price__row">
+                <span class="price__row-label">
+                  Víkend · 2 noci
+                  <span class="price__row-note">pátek – neděle</span>
+                </span>
+                <span class="price__row-value">
+                  12&nbsp;000&nbsp;Kč
+                  <span class="price__row-unit">6&nbsp;000&nbsp;Kč za noc</span>
+                </span>
+              </div>
+            </div>
+            <p class="price__save">V&nbsp;týdnu ušetříte 1&nbsp;000&nbsp;Kč za noc</p>
+          </article>
+
+          <article class="price__season">
+            <p class="price__season-tag">Duben – květen, září – listopad</p>
+            <h3 class="price__season-name">Mimo sezónu</h3>
+            <div class="price__rows">
+              <div class="price__row price__row--hero">
+                <span class="price__row-label">
+                  Noc v&nbsp;týdnu
+                  <span class="price__row-note">neděle – čtvrtek</span>
+                </span>
+                <span class="price__row-value">4&nbsp;000&nbsp;Kč</span>
+              </div>
+              <div class="price__row">
+                <span class="price__row-label">
+                  Víkend · 2 noci
+                  <span class="price__row-note">pátek – neděle</span>
+                </span>
+                <span class="price__row-value">
+                  10&nbsp;000&nbsp;Kč
+                  <span class="price__row-unit">5&nbsp;000&nbsp;Kč za noc</span>
+                </span>
+              </div>
+            </div>
+            <p class="price__save">V&nbsp;týdnu ušetříte 1&nbsp;000&nbsp;Kč za noc</p>
+          </article>
+        </div>
+
+        <div class="price__block">
+          <h3 class="price__block-title">Provoz, poplatky a ceny</h3>
+
+          <div class="price__notes">
+            <div class="price__note-group">
+              <p class="price__note-label">Počet hostů</p>
+              <ul>
+                <li>Cena je vždy za celý objekt <strong>do 10 osob</strong>.</li>
+                <li>Každá další osoba <strong>400 Kč</strong> / osoba / noc.</li>
+                <li>Děti do 3 let zdarma, bez nároku na lůžko.</li>
+                <li>K dispozici 1 cestovní postýlka — nutno rezervovat předem.</li>
+                <li>Pes <strong>zdarma</strong>, bez příplatku.</li>
+              </ul>
+            </div>
+
+            <div class="price__note-group">
+              <p class="price__note-label">V ceně pobytu</p>
+              <ul>
+                <li>Energie jsou <strong>započítané v ceně</strong>.</li>
+                <li>Krbové dřevo je <strong>v ceně</strong> — nic nedovážíte.</li>
+                <li>Ložní prádlo je v ceně.</li>
+                <li>Wi-Fi je v ceně.</li>
+                <li>Závěrečný úklid v ceně.</li>
+              </ul>
+            </div>
+
+            <div class="price__note-group">
+              <p class="price__note-label">Příjezd a odjezd</p>
+              <ul>
+                <li>Příjezd dle domluvy.</li>
+                <li>Odjezd nejpozději <strong>do 12 hodin</strong>.</li>
+              </ul>
+            </div>
+
+            <div class="price__note-group">
+              <p class="price__note-label">Rekreační poplatek obci</p>
+              <ul>
+                <li><strong>20 Kč</strong> / osoba / noc.</li>
+                <li>Děti do 18 let a důchodci zdarma.</li>
+                <li>Při příjezdu je nutné zapsat se do Knihy hostů a uvést údaje k poplatku.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="price__cta">
+          <a class="btn btn--gold btn--lg" href="#rezervace">
+            <span>Nezávazně poptat termín</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="avail" id="terminy">
+      <div class="avail__container">
+        <header class="avail__head">
+          <h2 class="avail__title">Kdy je chata volná</h2>
+          <p class="avail__subtitle">
+            Přehled aktuální obsazenosti. Vybraný termín vám rádi potvrdíme telefonicky
+            nebo nám napište přes rezervační formulář.
+          </p>
+        </header>
+
+        <div class="avail__legend" aria-hidden="true">
+          <span class="avail__legend-item"><span class="avail__swatch avail__swatch--free"></span> Volno</span>
+          <span class="avail__legend-item"><span class="avail__swatch avail__swatch--booked"></span> Obsazeno</span>
+        </div>
+
+        <div class="avail__grid" id="availCalendar">
+          <p class="avail__loading">Načítám volné termíny…</p>
+        </div>
+
+        <div class="avail__foot">
+          <p class="avail__updated" id="availUpdated"></p>
+          <a class="btn btn--primary" href="#rezervace">Rezervovat termín</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="map" id="mapa">
+      <div class="map__container">
+
+        <header class="map__head">
+          <p class="map__eyebrow">Kde nás najdete</p>
+          <p class="map__subtitle">
+            Chata stojí v klidné části Nové Vsi u Dolní Moravice — v srdci Jeseníků,
+            s lesními cestami a hřebeny prakticky za humny.
+          </p>
+        </header>
+
+        <div class="map__layout">
+
+          <div class="map__panel">
+            <ul class="map__facts">
+              <li class="map__fact">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+                <div>
+                  <p class="map__fact-label">Adresa</p>
+                  <p class="map__fact-value">Nová Ves 46<br />795 01 Dolní Moravice</p>
+                </div>
+              </li>
+              <li class="map__fact">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="m3 20 6-13 4.5 9 2.5-4 5 8z" />
+                  <circle cx="17" cy="5" r="2" />
+                </svg>
+                <div>
+                  <p class="map__fact-label">Oblast</p>
+                  <p class="map__fact-value">Jeseníky, Moravskoslezský kraj</p>
+                </div>
+              </li>
+              <li class="map__fact">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="12" cy="12" r="9" />
+                  <path d="m15.5 8.5-2.1 5.4-5.4 2.1 2.1-5.4z" />
+                </svg>
+                <div>
+                  <p class="map__fact-label">GPS</p>
+                  <p class="map__fact-value">49.9889153° N, 17.2784747° E</p>
+                </div>
+              </li>
+            </ul>
+
+            <div class="map__actions">
+              <a class="btn btn--gold" href="https://www.google.com/maps/dir/?api=1&amp;destination=49.9889152778,17.2784747222" target="_blank" rel="noopener noreferrer">
+                <span>Navigovat k chatě</span>
+              </a>
+              <a class="map__link" href="https://mapy.cz/zakladni?source=coor&amp;id=17.2784747222%2C49.9889152778&amp;x=17.2784747222&amp;y=49.9889152778&amp;z=15" target="_blank" rel="noopener noreferrer">
+                Otevřít v Mapy.cz
+              </a>
+            </div>
+          </div>
+
+          <div class="map__frame">
+            <iframe
+              src="https://www.google.com/maps?q=49.9889152778,17.2784747222&amp;hl=cs&amp;z=14&amp;output=embed"
+              title="Mapa — Chata u Lubátka, Nová Ves 46, Dolní Moravice"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              allowfullscreen></iframe>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="book" id="rezervace">
+      <div class="book__container">
+
+        <header class="book__head">
+          <h2 class="book__title">Napište si o termín</h2>
+          <p class="book__subtitle">
+            Pošlete nám nezávaznou poptávku — ozveme se vám do 24 hodin
+            a termín společně doladíme.
+          </p>
+        </header>
+
+        <div class="book__card">
+
+          <aside class="book__aside">
+            <div class="book__glow" aria-hidden="true"></div>
+            <div class="book__aside-inner">
+              <h3 class="book__aside-title">Rádi se o vás postaráme</h3>
+
+              <ul class="book__perks">
+                <li>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M20 6 9 17l-5-5" />
+                  </svg>
+                  <span>Nezávazná poptávka — nic vás nezavazuje</span>
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <circle cx="12" cy="12" r="9" />
+                    <path d="M12 7v5l3.5 2" />
+                  </svg>
+                  <span>Odpovídáme do 24 hodin</span>
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
+                  <span>Celá roubenka jen pro vás, až pro 16 osob</span>
+                </li>
+              </ul>
+
+              <div class="book__aside-rule" aria-hidden="true"></div>
+
+              <p class="book__aside-label">Raději zavoláte?</p>
+              <a class="book__aside-phone" href="tel:+420776145444">+420 776 145 444</a>
+              <a class="book__aside-mail" href="mailto:lucie_dostalova@seznam.cz">lucie_dostalova@seznam.cz</a>
+            </div>
+          </aside>
+
+          <form class="book__form" id="bookForm" action="https://api.web3forms.com/submit" method="POST" novalidate>
+
+            <!-- Web3Forms konfiguracja -->
+            <input type="hidden" name="access_key" value="c1305d04-8c1d-4304-82be-3bdf021533bc" />
+            <input type="hidden" name="to_email" value="lucie_dostalova@seznam.cz" />
+            <input type="hidden" name="subject" value="Nová poptávka - Chata u Lubátka" />
+            <input type="hidden" name="from_name" value="Chata u Lubátka" />
+
+            <div class="book__field">
+              <label for="bookName">Jméno a příjmení <span class="book__req">*</span></label>
+              <input class="book__input" type="text" id="bookName" name="jmeno" required
+                     autocomplete="name" placeholder="Jan Novák" />
+            </div>
+
+            <div class="book__row">
+              <div class="book__field">
+                <label for="bookEmail">E-mail <span class="book__req">*</span></label>
+                <input class="book__input" type="email" id="bookEmail" name="email" required
+                       autocomplete="email" placeholder="jan@email.cz" />
+              </div>
+              <div class="book__field">
+                <label for="bookPhone">Telefon <span class="book__req">*</span></label>
+                <input class="book__input" type="tel" id="bookPhone" name="telefon" required
+                       autocomplete="tel" placeholder="+420 777 123 456" />
+              </div>
+            </div>
+
+            <div class="book__row">
+              <div class="book__field">
+                <label for="bookFrom">Příjezd <span class="book__req">*</span></label>
+                <input class="book__input" type="date" id="bookFrom" name="termin_od" required />
+              </div>
+              <div class="book__field">
+                <label for="bookTo">Odjezd <span class="book__req">*</span></label>
+                <input class="book__input" type="date" id="bookTo" name="termin_do" required />
+              </div>
+            </div>
+
+            <p class="book__hint" id="bookHint" role="status" aria-live="polite"></p>
+
+            <div class="book__field">
+              <label for="bookGuests">Počet osob <span class="book__req">*</span></label>
+              <select class="book__input book__select" id="bookGuests" name="pocet_osob" required>
+                <option value="">Vyberte počet…</option>
+                <option value="1">1 osoba</option>
+                <option value="2">2 osoby</option>
+                <option value="3">3 osoby</option>
+                <option value="4">4 osoby</option>
+                <option value="5">5 osob</option>
+                <option value="6">6 osob</option>
+                <option value="7">7 osob</option>
+                <option value="8">8 osob</option>
+                <option value="9">9 osob</option>
+                <option value="10">10 osob</option>
+                <option value="11">11 osob</option>
+                <option value="12">12 osob</option>
+                <option value="13">13 osob</option>
+                <option value="14">14 osob</option>
+                <option value="15">15 osob</option>
+                <option value="16">16 osob</option>
+              </select>
+            </div>
+
+            <div class="book__field">
+              <label for="bookMsg">Zpráva</label>
+              <textarea class="book__input book__textarea" id="bookMsg" name="zprava" rows="4"
+                        placeholder="Máte nějaké přání nebo dotaz? Napište nám ho sem."></textarea>
+            </div>
+
+            <!-- Past na roboty — skryté pole, člověk ho nevyplní -->
+            <div class="book__gotcha" aria-hidden="true">
+              <label for="bookWebsite">Toto pole nevyplňujte</label>
+              <input type="text" id="bookWebsite" name="_gotcha" tabindex="-1" autocomplete="off" />
+            </div>
+
+            <label class="book__consent" for="bookConsent">
+              <input type="checkbox" id="bookConsent" name="souhlas" value="ano" required />
+              <span>Souhlasím se zpracováním osobních údajů za účelem vyřízení této poptávky. <span class="book__req">*</span></span>
+            </label>
+
+            <button class="btn btn--gold btn--lg book__submit" type="submit" id="bookSubmit">
+              <span>Odeslat nezávaznou poptávku</span>
+            </button>
+
+            <p class="book__status" id="bookStatus" role="status" aria-live="polite"></p>
+
+          </form>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" id="kontakt">
+    <div class="footer__glow" aria-hidden="true"></div>
+
+    <div class="footer__inner">
+
+      <!-- Rezervační výzva -->
+      <div class="footer__cta">
+        <h2 class="footer__cta-title">Váš týden v srdci Jeseníků<br />na vás už čeká</h2>
+        <div class="footer__cta-actions">
+          <a class="btn btn--gold btn--lg" href="#rezervace">
+            <span>Rezervovat pobyt</span>
+          </a>
+          <a class="footer__cta-phone" href="tel:+420776145444">
+            nebo zavolejte <strong>+420 776 145 444</strong>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer__rule" aria-hidden="true"></div>
+
+      <!-- Hlavní obsah -->
+      <div class="footer__main">
+
+        <div class="footer__brand">
+          <img class="footer__logo" src="assets/logo-192.png" alt="Chata u Lubátka" width="192" height="192" />
+          <p class="footer__tagline">
+            Roubenka v srdci Jeseníků. Klid, vůně dřeva a hory jen pro vás —
+            místo, kam se budete rádi vracet.
+          </p>
+        </div>
+
+        <nav class="footer__col" aria-label="Navigace v patičce">
+          <h3 class="footer__col-title">Navigace</h3>
+          <ul class="footer__links">
+            <li><a href="#chata">Chata</a></li>
+            <li><a href="#okoli">Okolí</a></li>
+            <li><a href="#vylety">Výlety</a></li>
+            <li><a href="#nabidky">Speciální nabídky</a></li>
+            <li><a href="#duvody">Proč Jeseníky</a></li>
+            <li><a href="#gallery">Fotografie</a></li>
+            <li><a href="#cenik">Ceník</a></li>
+          </ul>
+        </nav>
+
+        <div class="footer__col">
+          <h3 class="footer__col-title">Kontakt</h3>
+          <ul class="footer__contact">
+            <li>
+              <a href="tel:+420776145444">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z" />
+                </svg>
+                <span>+420 776 145 444</span>
+              </a>
+            </li>
+            <li>
+              <a href="mailto:lucie_dostalova@seznam.cz">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="2" y="4" width="20" height="16" rx="2" />
+                  <path d="m22 7-10 6L2 7" />
+                </svg>
+                <span>lucie_dostalova@seznam.cz</span>
+              </a>
+            </li>
+            <li>
+              <span class="footer__contact-static">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+                <span>Jeseníky, Česká republika</span>
+              </span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer__col">
+          <h3 class="footer__col-title">Sledujte nás</h3>
+          <div class="footer__social">
+            <a href="https://www.instagram.com/chataulubatka" aria-label="Instagram" class="footer__social-link" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="2" width="20" height="20" rx="5" />
+                <circle cx="12" cy="12" r="4" />
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+              </svg>
+            </a>
+            <a href="https://www.facebook.com/people/chata-u-Lubatka/61573097641585/" aria-label="Facebook" class="footer__social-link" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer__rule" aria-hidden="true"></div>
+
+      <!-- Spodní lišta -->
+      <div class="footer__bottom">
+        <p class="footer__copy">
+          © 2026 Chata u Lubátka. Všechna práva vyhrazena. IČO: 73886271
+          <span class="footer__sep" aria-hidden="true">·</span>
+          <a class="footer__legal" href="zasady-ochrany-osobnich-udaju.html">Zásady ochrany osobních údajů</a>
+        </p>
+        <p class="footer__made">Vytvořeno s láskou v Jeseníkách | vytvořil <a href="https://www.web-pilot.cz" target="_blank" rel="noopener noreferrer">WebPilot</a></p>
+        <p class="footer__cookies" style="font-size: 0.75rem; opacity: 0.75; margin-top: 8px;">Tento web nepoužívá cookies pro sledování. Mapa Google si může uložit vlastní cookies — více v Zásadách ochrany osobních údajů.</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Cookie Consent Banner -->
+  <div class="cookie-consent hidden" id="cookie-consent">
+    <div class="cookie-consent__container">
+      <div class="cookie-consent__content">
+        <h2 class="cookie-consent__title">Soubory cookies 🍪</h2>
+        <p class="cookie-consent__text">
+          Web nepoužívá cookies pro sledování. Google Maps si však uloží cookies pro správné fungování.
+          Víc v <a href="zasady-ochrany-osobnich-udaju.html" class="cookie-consent__link">Zásadách ochrany osobních údajů</a>.
+        </p>
+      </div>
+      <div class="cookie-consent__actions">
+        <button class="cookie-consent__button cookie-consent__button--accept" data-cookie-accept>
+          Přijímám
+        </button>
+        <button class="cookie-consent__button cookie-consent__button--decline" data-cookie-decline>
+          Odmítám
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/cookies.js" defer></script>
+  <script src="assets/js/hero.js?v=6" defer></script>
+  <script src="assets/js/hero-gsap.js?v=4" defer></script>
+  <script src="assets/js/features.js?v=4" defer></script>
+  <script src="assets/js/story.js?v=5" defer></script>
+  <script src="assets/js/reasons.js?v=4" defer></script>
+  <script src="assets/js/gallery.js?v=6" defer></script>
+  <script src="assets/js/trips.js?v=5" defer></script>
+  <script src="assets/js/offers.js?v=1" defer></script>
+  <script src="assets/js/availability.js?v=5" defer></script>
+  <script src="assets/js/booking.js?v=4" defer></script>
+</body>
+</html>
