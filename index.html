@@ -77,7 +77,7 @@
   <!-- Bez <link rel="preload"> záměrně: media dotaz na preloadu neodfiltroval
        desktopovou variantu a mobil stahoval obrázek dvakrát. <picture> je hned
        na začátku <body> s fetchpriority="high", preload scanner ho najde sám. -->
-  <link rel="stylesheet" href="assets/css/style.css?v=37" />
+  <link rel="stylesheet" href="assets/css/style.css?v=38" />
   <!-- defer: bez něj oba soubory blokovaly první vykreslení. Odložené skripty
        se spouštějí v pořadí dokumentu, takže GSAP je připravený dřív než
        skripty webu na konci <body>. Animace jsou ozdoba, ne obsah. -->
@@ -229,19 +229,19 @@
         <div class="story__gallery">
           <figure class="story__figure story__figure--tall">
             <div class="story__frame">
-              <img src="assets/story-roubenka.jpg" alt="Chata u Lubátka - dřevěná roubenka s kamenným základem a modrou střechou" width="600" height="900" />
+              <img src="assets/story-roubenka.jpg" alt="Dřevěná roubenka Chata u Lubátka mezi vzrostlými stromy Jeseníků" width="600" height="900" />
             </div>
           </figure>
 
           <figure class="story__figure">
             <div class="story__frame">
-              <img src="assets/story-interior-640.jpg" alt="Luxusní interiér roubenky s dřevěnými trámy a moderním nábytkem" width="640" height="288" />
+              <img src="assets/story-interior-640.jpg" alt="Obytná část roubenky s pohovkami, jídelním stolem a trámovým stropem z kulatiny" width="640" height="288" />
             </div>
           </figure>
 
           <figure class="story__figure">
             <div class="story__frame">
-              <img src="assets/story-okoli-640.jpg" alt="Lesní krajina v horské přírodě" width="640" height="400" />
+              <img src="assets/story-okoli-640.jpg" alt="Roubenka s krytou terasou na okraji lesa v horské krajině Jeseníků" width="640" height="400" />
             </div>
           </figure>
         </div>
@@ -344,8 +344,8 @@
         <div class="stay__floors">
           <article class="stay__floor">
             <div class="stay__floor-media">
-              <img src="assets/gallery/chata-16.jpg" width="1000" height="450" loading="lazy"
-                   alt="Plně vybavená kuchyně propojená s jídelnou v roubence" />
+              <img src="assets/stay-1.jpg" width="1000" height="450" loading="lazy"
+                   alt="Plně vybavená kuchyně s varným ostrůvkem propojená s obývací částí roubenky" />
             </div>
             <div class="stay__floor-body">
               <p class="stay__floor-tag">Přízemí</p>
@@ -360,8 +360,8 @@
 
           <article class="stay__floor stay__floor--reverse">
             <div class="stay__floor-media">
-              <img src="assets/gallery/chata-13.jpg" width="1000" height="450" loading="lazy"
-                   alt="Podkrovní ložnice s manželskou postelí a připraveným povlečením" />
+              <img src="assets/stay-2.jpg" width="1000" height="450" loading="lazy"
+                   alt="Podkrovní ložnice s manželskou postelí, zelenými závěsy a připraveným povlečením" />
             </div>
             <div class="stay__floor-body">
               <p class="stay__floor-tag">První patro</p>
@@ -434,40 +434,56 @@
 
         <div class="gallery__grid">
           <button class="gallery__item gallery__item--featured" type="button">
-            <img src="assets/gallery/chata-1.jpg"
-                 alt="Roubenka z kulatiny s krytou terasou, kamennou podezdívkou a lanovým zábradlím" />
+            <img src="assets/gallery/g1.jpg"
+                 alt="Dřevěná roubenka Chata u Lubátka s krytou terasou a slunečníkem za letního dne" />
           </button>
           <button class="gallery__item" type="button">
-            <img src="assets/gallery/chata-9.jpg" loading="lazy"
-                 alt="Podkrovní koupelna se sprchovým koutem, kulatým zrcadlem a střešním oknem" />
+            <img src="assets/gallery/g2.jpg" loading="lazy"
+                 alt="Obývací pokoj roubenky s rohovou sedačkou, krbovými kamny a kamennou stěnou" />
           </button>
           <button class="gallery__item" type="button">
-            <img src="assets/gallery/chata-2.jpg" loading="lazy"
-                 alt="Roubenka pod sněhem za slunečného zimního dne, kolem zasněžené smrky" />
+            <img src="assets/gallery/g3.jpg" loading="lazy"
+                 alt="Kuchyně s barovým pultem, dřevěnými sloupy z kulatiny a jídelním koutem" />
           </button>
           <button class="gallery__item" type="button">
-            <img src="assets/gallery/chata-6.jpg" loading="lazy"
-                 alt="Vstupní chodba s masivním schodištěm z kulatiny vedoucím do patra" />
+            <img src="assets/gallery/g4.jpg" loading="lazy"
+                 alt="Pohled velkým oknem roubenky na dřevěnou terasu se slunečníkem" />
           </button>
           <button class="gallery__item" type="button">
-            <img src="assets/gallery/chata-8.jpg" loading="lazy"
-                 alt="Jídelna s dlouhým stolem a lavicemi pod trámovým stropem" />
+            <img src="assets/gallery/g5.jpg" loading="lazy"
+                 alt="Podkrovní ložnice s manželskou postelí, pracovním stolem a kulatým kobercem" />
           </button>
           <button class="gallery__item" type="button">
-            <img src="assets/gallery/chata-3.jpg" loading="lazy"
-                 alt="Boční pohled na roubenku s posezením na terase a zelení kolem" />
+            <img src="assets/gallery/g6.jpg" loading="lazy"
+                 alt="Vstupní hala s masivním schodištěm z kulatiny a tmavými stěnami" />
           </button>
           <button class="gallery__item" type="button">
-            <img src="assets/gallery/chata-10.jpg" loading="lazy"
-                 alt="Koupelna s vanou a sprchovým koutem, prosvětlená střešním oknem" />
+            <img src="assets/gallery/g7.jpg" loading="lazy"
+                 alt="Koupelna s vanou, kulatým zrcadlem a šikmým stropem se střešním oknem" />
           </button>
           <button class="gallery__item" type="button">
-            <img src="assets/gallery/chata-18.jpg" loading="lazy"
-                 alt="Obývací část s rohovou sedačkou a večerním nasvícením v roubené místnosti" />
+            <img src="assets/gallery/g8.jpg" loading="lazy"
+                 alt="Ohniště s dřevěnými lavicemi v lese hned u roubenky" />
           </button>
           <button class="gallery__item" type="button">
-            <img src="assets/gallery/chata-23.jpg" loading="lazy"
-                 alt="Roubenka za slunečného dne se zeleným trávníkem a krytým posezením" />
+            <img src="assets/gallery/g9.jpg" loading="lazy"
+                 alt="Boční pohled na roubenku se schody na terasu a slunečníkem" />
+          </button>
+          <button class="gallery__item" type="button">
+            <img src="assets/gallery/g10.jpg" loading="lazy"
+                 alt="Světlá podkrovní ložnice s manželskou postelí a přistýlkou u okna" />
+          </button>
+          <button class="gallery__item" type="button">
+            <img src="assets/gallery/g11.jpg" loading="lazy"
+                 alt="Koupelna se sprchovým koutem, umyvadlem a šikmým stropem s oknem" />
+          </button>
+          <button class="gallery__item" type="button">
+            <img src="assets/gallery/g12.jpg" loading="lazy"
+                 alt="Kytice kopretin ve sklenici na kuchyňské desce, v pozadí obývací část" />
+          </button>
+          <button class="gallery__item" type="button">
+            <img src="assets/gallery/g13.jpg" loading="lazy"
+                 alt="Detail světelného řetězu se žárovkami zavěšeného na roubené stěně terasy" />
           </button>
         </div>
       </div>
@@ -517,8 +533,8 @@
         <div class="around__cards">
 
           <article class="around__card">
-            <img src="assets/gallery/chata-4.jpg" width="1000" height="750" loading="lazy"
-                 alt="Zasněžená cesta k roubence mezi smrky" />
+            <img src="assets/around-1.jpg" width="1400" height="1050" loading="lazy"
+                 alt="Ohniště s dřevěnými lavicemi v lese u roubenky" />
             <div class="around__card-scrim" aria-hidden="true"></div>
             <div class="around__card-body">
               <h3 class="around__card-title">V zimě</h3>
@@ -530,8 +546,8 @@
           </article>
 
           <article class="around__card">
-            <img src="assets/gallery/chata-25.jpg" width="900" height="1200" loading="lazy"
-                 alt="Slunná terasa roubenky s posezením a houpacím křeslem" />
+            <img src="assets/around-2.jpg" width="1050" height="1400" loading="lazy"
+                 alt="Terasa roubenky se závěsným houpacím křeslem a posezením za letního dne" />
             <div class="around__card-scrim" aria-hidden="true"></div>
             <div class="around__card-body">
               <h3 class="around__card-title">V létě</h3>
@@ -543,8 +559,8 @@
           </article>
 
           <article class="around__card">
-            <img src="assets/okoli-les.jpg" width="1600" height="1067" loading="lazy"
-                 alt="Mlžný smrkový les na svazích Jeseníků" />
+            <img src="assets/around-3.jpg" width="1600" height="1067" loading="lazy"
+                 alt="Boční pohled na roubenku s podkrovními okny a zelení Jeseníků kolem" />
             <div class="around__card-scrim" aria-hidden="true"></div>
             <div class="around__card-body">
               <h3 class="around__card-title">Oblíbené výlety</h3>
@@ -616,8 +632,8 @@
           <li class="offers__card">
             <a class="offers__link" href="#rezervace">
               <span class="offers__media">
-                <img src="assets/gallery/chata-25.jpg" width="900" height="1200" loading="lazy"
-                     alt="Slunná terasa roubenky s houpacím křeslem" />
+                <img src="assets/offer-1.jpg" width="900" height="1200" loading="lazy"
+                     alt="Štítová stěna roubenky s krytou terasou a slunečníkem" />
                 <span class="offers__scrim" aria-hidden="true"></span>
                 <span class="offers__tag">Sleva Ne–Čt</span>
               </span>
@@ -638,8 +654,8 @@
           <li class="offers__card">
             <a class="offers__link" href="#rezervace">
               <span class="offers__media">
-                <img src="assets/gallery/chata-2.jpg" width="1000" height="750" loading="lazy"
-                     alt="Roubenka pod sněhem za slunečného zimního dne" />
+                <img src="assets/offer-2.jpg" width="1000" height="750" loading="lazy"
+                     alt="Obývací pokoj s rohovou sedačkou, krbovými kamny a kamennou stěnou" />
                 <span class="offers__scrim" aria-hidden="true"></span>
                 <span class="offers__tag">4 noci</span>
               </span>
@@ -660,8 +676,8 @@
           <li class="offers__card">
             <a class="offers__link" href="#rezervace">
               <span class="offers__media">
-                <img src="assets/gallery/chata-18.jpg" width="1000" height="750" loading="lazy"
-                     alt="Obývací část s večerním nasvícením v roubené místnosti" />
+                <img src="assets/offer-3.jpg" width="1000" height="750" loading="lazy"
+                     alt="Obývací část s čalouněnými křesly pod trámovým stropem z kulatiny" />
                 <span class="offers__scrim" aria-hidden="true"></span>
                 <span class="offers__tag">6 nocí</span>
               </span>
@@ -682,8 +698,8 @@
           <li class="offers__card">
             <a class="offers__link" href="#rezervace">
               <span class="offers__media">
-                <img src="assets/gallery/chata-4.jpg" width="1000" height="750" loading="lazy"
-                     alt="Zasněžená cesta k roubence mezi smrky" />
+                <img src="assets/offer-4.jpg" width="1000" height="750" loading="lazy"
+                     alt="Roubenka s krytou terasou a kamennou podezdívkou" />
                 <span class="offers__scrim" aria-hidden="true"></span>
                 <span class="offers__tag">6 nocí</span>
               </span>
@@ -704,8 +720,8 @@
           <li class="offers__card">
             <a class="offers__link" href="#rezervace">
               <span class="offers__media">
-                <img src="assets/gallery/chata-23.jpg" width="1000" height="750" loading="lazy"
-                     alt="Roubenka za slunečného dne se zeleným trávníkem a posezením" />
+                <img src="assets/offer-5.jpg" width="1000" height="750" loading="lazy"
+                     alt="Dřevěná roubenka se slunečníkem a posezením na terase" />
                 <span class="offers__scrim" aria-hidden="true"></span>
                 <span class="offers__tag">4 noci</span>
               </span>
