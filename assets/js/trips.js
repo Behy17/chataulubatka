@@ -14,7 +14,8 @@
 
   /* --- 1) Fasáda videa --------------------------------- */
   var player = document.querySelector(".trips__player");
-  if (player) {
+  var stage = document.querySelector(".trips__video");
+  if (player && stage) {
     player.addEventListener("click", function () {
       var id = player.getAttribute("data-yt");
       if (!id) return;
@@ -34,7 +35,10 @@
       );
       iframe.setAttribute("allowfullscreen", "");
 
-      player.replaceWith(iframe);
+      // Fasáda i filmová „chrome" se schovají přes .is-playing (viz CSS),
+      // zůstanou ale v DOM, aby GSAP ScrollTrigger neztratil svůj cíl.
+      stage.appendChild(iframe);
+      stage.classList.add("is-playing");
       iframe.focus();
     });
   }

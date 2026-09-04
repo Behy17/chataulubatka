@@ -77,7 +77,7 @@
   <!-- Bez <link rel="preload"> záměrně: media dotaz na preloadu neodfiltroval
        desktopovou variantu a mobil stahoval obrázek dvakrát. <picture> je hned
        na začátku <body> s fetchpriority="high", preload scanner ho najde sám. -->
-  <link rel="stylesheet" href="assets/css/style.css?v=38" />
+  <link rel="stylesheet" href="assets/css/style.css?v=39" />
   <!-- defer: bez něj oba soubory blokovaly první vykreslení. Odložené skripty
        se spouštějí v pořadí dokumentu, takže GSAP je připravený dřív než
        skripty webu na konci <body>. Animace jsou ozdoba, ne obsah. -->
@@ -607,6 +607,29 @@
               </svg>
             </span>
           </button>
+
+          <!-- Filmová „chrome" přehrávače — jen vizuál. Vrstva neklikatelná
+               (pointer-events: none), veškeré kliknutí projde na tlačítko výše,
+               které načte skutečný YouTube přehrávač. -->
+          <div class="trips__chrome" aria-hidden="true">
+            <div class="trips__chrome-bar trips__chrome-bar--top">
+              <span class="trips__chrome-title">Jeseníky z výšky</span>
+              <span class="trips__chrome-meta">Video · YouTube</span>
+            </div>
+            <div class="trips__chrome-bar trips__chrome-bar--bottom">
+              <span class="trips__chrome-track"><span class="trips__chrome-fill"></span></span>
+              <span class="trips__chrome-icons">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+                  <path d="M15.54 8.46a5 5 0 0 1 0 7.07" />
+                  <path d="M19.07 4.93a10 10 0 0 1 0 14.14" />
+                </svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M8 3H5a2 2 0 0 0-2 2v3M21 8V5a2 2 0 0 0-2-2h-3M3 16v3a2 2 0 0 0 2 2h3M16 21h3a2 2 0 0 0 2-2v-3" />
+                </svg>
+              </span>
+            </div>
+          </div>
         </figure>
 
 
@@ -1276,7 +1299,7 @@
   <script src="assets/js/story.js?v=5" defer></script>
   <script src="assets/js/reasons.js?v=4" defer></script>
   <script src="assets/js/gallery.js?v=6" defer></script>
-  <script src="assets/js/trips.js?v=5" defer></script>
+  <script src="assets/js/trips.js?v=6" defer></script>
   <script src="assets/js/offers.js?v=1" defer></script>
   <script src="assets/js/availability.js?v=5" defer></script>
   <script src="assets/js/booking.js?v=4" defer></script>
