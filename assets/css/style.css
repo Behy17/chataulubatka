@@ -406,7 +406,6 @@ a { text-decoration: none; color: inherit; }
   position: absolute;
   inset: -3% 0 -6% 0;  /* Fotka vyplňuje hero sekci */
   z-index: var(--z-hero);
-  will-change: transform;
 }
 
 .hero__media picture { display: contents; }
@@ -419,18 +418,12 @@ a { text-decoration: none; color: inherit; }
   transform-origin: center;
 }
 
-@keyframes kenburns {
-  from { transform: scale(1.06) translate3d(0, 0, 0); }
-  to   { transform: scale(1.14) translate3d(-1.2%, -1%, 0); }
-}
-
 .hero__img--mobile {
   display: none;
-  /* Ken Burns — pomalý, nekonečný zoom. Jen na statické fotce: na
-     přehrávaném videu (--desktop) sekala, protože prohlížeč musel
-     každý snímek přepočítat masku zaoblených rohů nad texturou,
-     kterou zároveň průběžně mění dekódování videa. */
-  animation: kenburns 32s ease-in-out infinite alternate;
+  /* Statický ořez (dřív tu byl nekonečný Ken Burns zoom). Běžící animace
+     transform uvnitř zaoblené, ořízlé hero sekce na iOS Safari způsobovala,
+     že se při scrollu viewport vracel na začátek stránky. */
+  transform: scale(1.06);
 }
 .hero__img--desktop {
   display: block;

@@ -16,23 +16,36 @@
   var ticking = false;
   var lastY = -1;
 
-  // Na mobilu (≤767px) vypnuto: kontinuální přepis transform uvnitř
-  // ořízlého (overflow:hidden + border-radius) hero kontejneru je
-  // na iOS Safari známý spouštěč bugu, kdy si prohlížeč při plynulém
-  // scrollu špatně přepočítá pozici a "vrátí" viewport na začátek stránky.
-  var skipParallax = window.matchMedia("(max-width: 767px)").matches;
+  // Parallax jen u myši na velkém displeji. Na dotykových zařízeních
+  // (telefon, tablet, iPad) je vypnutý: kontinuální přepis transform uvnitř
+  // ořízlého (overflow:hidden + border-radius) hero kontejneru je na iOS
+  // Safari známý spouštěč bugu, kdy si prohlížeč při plynulém scrollu špatně
+  // přepočítá pozici a "vrátí" viewport na začátek stránky. Dotek se pozná
+  // podle pointer/hover, takže sedí i telefon otočený na šířku.
+  var parallaxMQ = window.matchMedia("(min-width: 1024px) and (hover: hover) and (pointer: fine)");
+  var lastOn = null;
 
   function render() {
     ticking = false;
 
     var y = window.scrollY || window.pageYOffset;
-    if (y === lastY) return;
+    var on = !reduceMotion && parallaxMQ.matches;
+    if (y === lastY && on === lastOn) return;
     lastY = y;
+    lastOn = on;
 
     // Hlavička dostane pozadí, jakmile opustíme špičku stránky.
     if (header) header.classList.toggle("is-scrolled", y > 40);
 
-    if (reduceMotion || skipParallax) return;
+    if (!on) {
+      // Režim se změnil (otočení, připojení myši…) — vrátit výchozí stav.
+      if (media && media.style.transform) media.style.transform = "";
+      if (content && content.style.transform) {
+        content.style.transform = "";
+        content.style.opacity = "";
+      }
+      return;
+    }
 
     var vh = window.innerHeight;
     if (y > vh) return; // mimo hero už nepočítáme nic
